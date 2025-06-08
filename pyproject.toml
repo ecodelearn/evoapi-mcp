@@ -5,10 +5,10 @@ description = "Servidor MCP para integração com Evolution API - WhatsApp para 
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "EvoAPI MCP Team", email = "contato@evoapi-mcp.com"}
+    {name = "Daniel Dias", email = "ecodelearn@outlook.com"}
 ]
 maintainers = [
-    {name = "EvoAPI MCP Team", email = "contato@evoapi-mcp.com"}
+    {name = "Daniel Dias", email = "ecodelearn@outlook.com"}
 ]
 keywords = ["mcp", "whatsapp", "evolution-api", "ai", "chatbot", "claude"]
 classifiers = [
@@ -29,11 +29,11 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/seu-usuario/evoapi-mcp"
-Documentation = "https://github.com/seu-usuario/evoapi-mcp/tree/main/docs"
-Repository = "https://github.com/seu-usuario/evoapi-mcp.git"
-Issues = "https://github.com/seu-usuario/evoapi-mcp/issues"
-Changelog = "https://github.com/seu-usuario/evoapi-mcp/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/ecodelearn/evoapi-mcp"
+Documentation = "https://github.com/ecodelearn/evoapi-mcp/tree/main/docs"
+Repository = "https://github.com/ecodelearn/evoapi-mcp.git"
+Issues = "https://github.com/ecodelearn/evoapi-mcp/issues"
+Changelog = "https://github.com/ecodelearn/evoapi-mcp/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = [
