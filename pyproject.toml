@@ -1,11 +1,113 @@
 [project]
 name = "evoapi-mcp"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.0.0"
+description = "Servidor MCP para integração com Evolution API - WhatsApp para agentes de IA"
 readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "EvoAPI MCP Team", email = "contato@evoapi-mcp.com"}
+]
+maintainers = [
+    {name = "EvoAPI MCP Team", email = "contato@evoapi-mcp.com"}
+]
+keywords = ["mcp", "whatsapp", "evolution-api", "ai", "chatbot", "claude"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Communications :: Chat",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 requires-python = ">=3.11"
 dependencies = [
     "evolutionapi>=0.1.1",
     "mcp[cli]>=1.6.0",
     "python-dotenv>=1.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/seu-usuario/evoapi-mcp"
+Documentation = "https://github.com/seu-usuario/evoapi-mcp/tree/main/docs"
+Repository = "https://github.com/seu-usuario/evoapi-mcp.git"
+Issues = "https://github.com/seu-usuario/evoapi-mcp/issues"
+Changelog = "https://github.com/seu-usuario/evoapi-mcp/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+test = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-mock>=3.10.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["evoapi_mcp"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--cov=evoapi_mcp",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-report=xml",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
 ]
