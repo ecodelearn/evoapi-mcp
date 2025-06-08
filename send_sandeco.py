@@ -12,7 +12,7 @@ class SendSandeco:
         self.evo_api_token = os.getenv("EVO_API_TOKEN")
         self.evo_instance_id = os.getenv("EVO_INSTANCE_NAME")
         self.evo_instance_token = os.getenv("EVO_INSTANCE_TOKEN")
-        self.evo_base_url = os.getenv("EVO_BASE_URL")
+        self.evo_base_url = os.getenv("EVO_API_URL")
         
         # Inicializar o cliente Evolution
         self.client = EvolutionClient(
